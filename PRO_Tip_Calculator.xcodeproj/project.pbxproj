@@ -456,6 +456,7 @@
 				93E9E4821940035A006047F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93E9E4831940035A006047F8 /* Build configuration list for PBXNativeTarget "PRO_Tip_CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				93E9E4851940035A006047F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

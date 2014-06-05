@@ -8,10 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
-@property (weak, nonatomic) IBOutlet UITextField *billTextField;
+@property IBOutlet UITextField *billTextField;
+
 @property (weak, nonatomic) IBOutlet UILabel *splitLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *downArrowSelectedImage;
@@ -30,6 +31,9 @@
 {
     [super viewDidLoad];
     self.splitCount = 1;
+
+    self.billTextField.delegate = self;
+    self.billTextField.borderStyle = UITextBorderStyleRoundedRect;
 }
 
 // Dismisses billTextField's keyboard upon tap-away
@@ -68,8 +72,42 @@
     self.upArrowSelectedImage.alpha = 1;
 }
 
+- (NSUInteger) supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
 
+#pragma mark - Delegates
 
+//UITextField Formatting
 
+//Locks in a dollar sign at all times
+- (IBAction)onBillTextFieldEdited:(id)sender {
+
+    NSString *enteredText = self.billTextField.text;
+
+    if ( [enteredText rangeOfString:@"$" options:NSCaseInsensitiveSearch].location != NSNotFound ) {
+        // dollar sign NOT added
+    }
+    else{
+        self.billTextField.text = [NSString stringWithFormat:@"$%@",enteredText];
+    }
+}
+
+//Restricts textField to only two decimal places
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [self.billTextField.text stringByReplacingCharactersInRange:range withString:string];
+
+    NSArray *sep = [newString componentsSeparatedByString:@"."];
+    if([sep count] >= 2)
+    {
+        NSString *sepStr=[NSString stringWithFormat:@"%@",[sep objectAtIndex:1]];
+        return !([sepStr length]>2);
+    }
+    return YES;
+}
 @end

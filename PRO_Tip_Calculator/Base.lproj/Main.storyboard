@@ -19,13 +19,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tip_background" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-Ge-WCP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.87058830261230469" green="0.87058830261230469" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-PF-WnD">
-                                <rect key="frame" x="112" y="220" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-PF-WnD">
+                                <rect key="frame" x="74" y="210" width="173" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.1584821428571429" green="0.1584821428571429" blue="0.1584821428571429" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <color key="backgroundColor" red="0.84978464693168931" green="0.8450372466695012" blue="0.85453204719387754" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.44313728809356689" green="0.44313728809356689" blue="0.44313728809356689" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="onBillTextFieldEdited:" destination="vXZ-lx-hvc" eventType="editingChanged" id="Qe4-k2-nit"/>
+                                    <action selector="onBillTextFieldEdited:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="eGZ-ZF-rfY"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-bJ-eJd">
                                 <rect key="frame" x="112" y="481" width="97" height="67"/>
@@ -35,18 +41,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICV-s9-TID">
-                                <rect key="frame" x="92" y="60" width="137" height="67"/>
+                                <rect key="frame" x="92" y="67" width="137" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.95294123890000004" green="0.95294123890000004" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down_arrow_selected" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-gz-9fb">
-                                <rect key="frame" x="67" y="499" width="39" height="39"/>
+                                <rect key="frame" x="67" y="499" width="40" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="up_arrow_selected" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-2n-H5O">
-                                <rect key="frame" x="214" y="497" width="39" height="39"/>
+                                <rect key="frame" x="213" y="499" width="40" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-zR-0bZ">
@@ -75,7 +81,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="billTextField" destination="FtM-PF-WnD" id="0QR-zi-ntQ"/>
+                        <outlet property="billTextField" destination="FtM-PF-WnD" id="IHn-EI-6DW"/>
                         <outlet property="downArrowSelectedImage" destination="B7O-gz-9fb" id="OVz-0c-4pT"/>
                         <outlet property="downButton" destination="tvK-zR-0bZ" id="2UU-BE-LPo"/>
                         <outlet property="splitLabel" destination="a3a-bJ-eJd" id="TZf-US-XfM"/>

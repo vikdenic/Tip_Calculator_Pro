@@ -22,6 +22,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *upButton;
 
 @property int splitCount;
+@property (weak, nonatomic) IBOutlet UIImageView *tenImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *fifteenImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *twentyImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *twentyFiveImageView;
+
+@property float billAmount;
+@property float tipPercent;
+
+@property float tipAmount;
 
 @end
 
@@ -30,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.splitCount = 1;
 
     self.billTextField.delegate = self;
@@ -49,6 +59,8 @@
     self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
 
     self.upArrowSelectedImage.alpha = 0;
+    [self calculateTip];
+
 }
 
 - (IBAction)onDownButtonReleased:(id)sender {
@@ -62,6 +74,7 @@
         self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
     }
     self.downArrowSelectedImage.alpha = 0;
+    [self calculateTip];
 }
 
 - (IBAction)onDownButtonTouched:(id)sender {
@@ -80,6 +93,59 @@
     return UIInterfaceOrientationPortrait;
 }
 
+-(void)calculateTip
+{
+    self.tipAmount = (self.billAmount * self.tipPercent) / self.splitCount;
+    self.tipLabel.text = [NSString stringWithFormat:@"$%.2f",self.tipAmount];
+}
+
+#pragma mark - Actions
+
+- (IBAction)onTenPressed:(id)sender
+{
+    [self resetButtons];
+    self.tenImageView.image = [UIImage imageNamed:@"ten_selected"];
+
+    self.tipPercent = .10;
+    [self calculateTip];
+}
+
+- (IBAction)onFifteenPressed:(id)sender
+{
+    [self resetButtons];
+    self.fifteenImageView.image = [UIImage imageNamed:@"fifteen_selected"];
+
+    self.tipPercent = .15;
+    [self calculateTip];
+}
+
+- (IBAction)onTwentyPressed:(id)sender
+{
+    [self resetButtons];
+    self.twentyImageView.image = [UIImage imageNamed:@"twenty_selected"];
+    self.tipPercent = .20;
+    NSLog(@"%f",self.tipPercent);
+    [self calculateTip];
+}
+
+- (IBAction)onTwentyFivePressed:(id)sender
+{
+    [self resetButtons];
+    self.twentyFiveImageView.image = [UIImage imageNamed:@"twentyfive_selected"];
+
+    self.tipPercent = .25;
+    [self calculateTip];
+}
+
+-(void)resetButtons
+{
+    self.tenImageView.image = [UIImage imageNamed:@"ten"];
+    self.fifteenImageView.image = [UIImage imageNamed:@"fifteen"];
+    self.twentyImageView.image = [UIImage imageNamed:@"twenty"];
+    self.twentyFiveImageView.image = [UIImage imageNamed:@"twentyfive"];
+    [self calculateTip];
+}
+
 #pragma mark - Delegates
 
 //UITextField Formatting
@@ -88,6 +154,7 @@
 - (IBAction)onBillTextFieldEdited:(id)sender {
 
     NSString *enteredText = self.billTextField.text;
+    NSLog(@"ENTEREDTEXT IS %@",enteredText);
 
     if ( [enteredText rangeOfString:@"$" options:NSCaseInsensitiveSearch].location != NSNotFound ) {
         // dollar sign NOT added
@@ -95,6 +162,10 @@
     else{
         self.billTextField.text = [NSString stringWithFormat:@"$%@",enteredText];
     }
+
+    self.billAmount = [enteredText floatValue];
+    NSLog(@"bill amount is %f",self.billAmount);
+    [self calculateTip];
 }
 
 //Restricts textField to only two decimal places
@@ -110,4 +181,5 @@
     }
     return YES;
 }
+
 @end

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tip_background" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-Ge-WCP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tip_background2" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-Ge-WCP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.87058830261230469" green="0.87058830261230469" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICV-s9-TID">
-                                <rect key="frame" x="92" y="67" width="137" height="67"/>
+                                <rect key="frame" x="14" y="68" width="293" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.95294123890000004" green="0.95294123890000004" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
@@ -77,6 +77,62 @@
                                     <action selector="onUpButtonTouched:" destination="vXZ-lx-hvc" eventType="touchDown" id="Oe4-l0-DpV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ten" translatesAutoresizingMaskIntoConstraints="NO" id="3Cp-YN-VeF">
+                                <rect key="frame" x="7" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fifteen" translatesAutoresizingMaskIntoConstraints="NO" id="Ztj-U4-FBi">
+                                <rect key="frame" x="87" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twenty" translatesAutoresizingMaskIntoConstraints="NO" id="Owv-bk-hWx">
+                                <rect key="frame" x="167" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twentyfive" translatesAutoresizingMaskIntoConstraints="NO" id="Pem-Xu-0ub">
+                                <rect key="frame" x="246" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSH-lK-luO">
+                                <rect key="frame" x="7" y="348" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTenPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Px8-ia-Kvd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1k-Fd-mJv">
+                                <rect key="frame" x="87" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFifteenPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EJ1-nN-UYc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBH-zg-mD8">
+                                <rect key="frame" x="167" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTwentyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="md8-5a-iF0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1Q-dL-axH">
+                                <rect key="frame" x="246" y="347" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTwentyFivePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="T25-W4-En8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -84,8 +140,12 @@
                         <outlet property="billTextField" destination="FtM-PF-WnD" id="IHn-EI-6DW"/>
                         <outlet property="downArrowSelectedImage" destination="B7O-gz-9fb" id="OVz-0c-4pT"/>
                         <outlet property="downButton" destination="tvK-zR-0bZ" id="2UU-BE-LPo"/>
+                        <outlet property="fifteenImageView" destination="Ztj-U4-FBi" id="nxe-kj-2tX"/>
                         <outlet property="splitLabel" destination="a3a-bJ-eJd" id="TZf-US-XfM"/>
+                        <outlet property="tenImageView" destination="3Cp-YN-VeF" id="KQQ-4y-x9K"/>
                         <outlet property="tipLabel" destination="ICV-s9-TID" id="s60-vN-unF"/>
+                        <outlet property="twentyFiveImageView" destination="Pem-Xu-0ub" id="BUn-ca-yM3"/>
+                        <outlet property="twentyImageView" destination="Owv-bk-hWx" id="FOa-IV-gaZ"/>
                         <outlet property="upArrowSelectedImage" destination="hZ4-2n-H5O" id="nE2-to-4wm"/>
                         <outlet property="upButton" destination="Dgy-UZ-aJj" id="NkO-Sw-0i1"/>
                     </connections>
@@ -96,7 +156,11 @@
     </scenes>
     <resources>
         <image name="down_arrow_selected" width="40" height="36"/>
-        <image name="tip_background" width="320" height="568"/>
+        <image name="fifteen" width="67" height="67"/>
+        <image name="ten" width="67" height="67"/>
+        <image name="tip_background2" width="320" height="568"/>
+        <image name="twenty" width="67" height="67"/>
+        <image name="twentyfive" width="67" height="67"/>
         <image name="up_arrow_selected" width="40" height="36"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

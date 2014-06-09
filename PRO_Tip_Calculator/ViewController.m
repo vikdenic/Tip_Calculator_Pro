@@ -44,6 +44,7 @@
 
     self.billTextField.delegate = self;
     self.billTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self onTwentyPressed:self];
 }
 
 // Dismisses billTextField's keyboard upon tap-away
@@ -162,8 +163,8 @@
     else{
         self.billTextField.text = [NSString stringWithFormat:@"$%@",enteredText];
     }
-
-    self.billAmount = [enteredText floatValue];
+    self.billAmount = [[self.billTextField.text substringFromIndex:1] floatValue];
+//    self.billAmount = [enteredText floatValue];
     NSLog(@"bill amount is %f",self.billAmount);
     [self calculateTip];
 }

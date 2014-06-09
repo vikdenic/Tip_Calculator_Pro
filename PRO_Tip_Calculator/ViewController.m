@@ -125,7 +125,6 @@
     [self resetButtons];
     self.twentyImageView.image = [UIImage imageNamed:@"twenty_selected"];
     self.tipPercent = .20;
-    NSLog(@"%f",self.tipPercent);
     [self calculateTip];
 }
 
@@ -155,7 +154,6 @@
 - (IBAction)onBillTextFieldEdited:(id)sender {
 
     NSString *enteredText = self.billTextField.text;
-    NSLog(@"ENTEREDTEXT IS %@",enteredText);
 
     if ( [enteredText rangeOfString:@"$" options:NSCaseInsensitiveSearch].location != NSNotFound ) {
         // dollar sign NOT added
@@ -165,7 +163,6 @@
     }
     self.billAmount = [[self.billTextField.text substringFromIndex:1] floatValue];
 //    self.billAmount = [enteredText floatValue];
-    NSLog(@"bill amount is %f",self.billAmount);
     [self calculateTip];
 }
 

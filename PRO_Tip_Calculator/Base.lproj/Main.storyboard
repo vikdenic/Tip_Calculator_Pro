@@ -22,12 +22,12 @@
                                 <color key="backgroundColor" red="0.87058830261230469" green="0.87058830261230469" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-PF-WnD">
-                                <rect key="frame" x="74" y="210" width="173" height="57"/>
+                                <rect key="frame" x="70" y="211" width="181" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84978464693168931" green="0.8450372466695012" blue="0.85453204719387754" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.44313728809356689" green="0.44313728809356689" blue="0.44313728809356689" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="onBillTextFieldEdited:" destination="vXZ-lx-hvc" eventType="editingChanged" id="Qe4-k2-nit"/>
                                     <action selector="onBillTextFieldEdited:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="eGZ-ZF-rfY"/>

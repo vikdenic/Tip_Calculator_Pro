@@ -137,6 +137,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="OKJ-Ge-WCP" id="YKP-Wu-V8U"/>
                         <outlet property="billTextField" destination="FtM-PF-WnD" id="IHn-EI-6DW"/>
                         <outlet property="downArrowSelectedImage" destination="B7O-gz-9fb" id="OVz-0c-4pT"/>
                         <outlet property="downButton" destination="tvK-zR-0bZ" id="2UU-BE-LPo"/>

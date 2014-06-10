@@ -10,6 +10,7 @@
 
 @interface ViewController () <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property IBOutlet UITextField *billTextField;
 
@@ -44,7 +45,13 @@
 
     self.billTextField.delegate = self;
     self.billTextField.borderStyle = UITextBorderStyleRoundedRect;
+//    self.billTextField.font = [UIFont fontWithName:@"Raleway-ExtraLight" size:50];
+//    self.splitLabel.font = [UIFont fontWithName:@"Raleway-ExtraLight" size:45];
+//    self.tipLabel.font = [UIFont fontWithName:@"Raleway-ExtraLight" size:50];
     [self onTwentyPressed:self];
+
+    //Raleway-ExtraLight
+    //tiplabel splitlabel billtextfield
 }
 
 // Dismisses billTextField's keyboard upon tap-away
@@ -59,6 +66,8 @@
     self.splitCount += 1;
     self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
 
+    [self splitControl];
+
     self.upArrowSelectedImage.alpha = 0;
     [self calculateTip];
 
@@ -69,13 +78,23 @@
     self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
     self.downArrowSelectedImage.alpha = 0;
 
+    [self splitControl];
+
+    self.downArrowSelectedImage.alpha = 0;
+    [self calculateTip];
+}
+
+-(void)splitControl
+{
     if(self.splitCount < 2)
     {
         self.splitCount = 1;
         self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
+        self.backgroundImageView.image = [UIImage imageNamed:@"tip_background2"];
     }
-    self.downArrowSelectedImage.alpha = 0;
-    [self calculateTip];
+    else{
+        self.backgroundImageView.image = [UIImage imageNamed:@"tip_background3"];
+    }
 }
 
 - (IBAction)onDownButtonTouched:(id)sender {
@@ -177,6 +196,7 @@
         NSString *sepStr=[NSString stringWithFormat:@"%@",[sep objectAtIndex:1]];
         return !([sepStr length]>2);
     }
+
     return YES;
 }
 

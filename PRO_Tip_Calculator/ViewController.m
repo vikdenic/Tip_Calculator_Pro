@@ -32,6 +32,7 @@
 @property float tipPercent;
 
 @property float tipAmount;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
 @end
 
@@ -52,6 +53,7 @@
 
     //Raleway-ExtraLight
     //tiplabel splitlabel billtextfield
+    NSLog(@"%f", self.tipAmount);
 }
 
 // Dismisses billTextField's keyboard upon tap-away
@@ -90,10 +92,10 @@
     {
         self.splitCount = 1;
         self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
-        self.backgroundImageView.image = [UIImage imageNamed:@"tip_background2"];
+        self.backgroundImageView.image = [UIImage imageNamed:@"tip_background5"];
     }
     else{
-        self.backgroundImageView.image = [UIImage imageNamed:@"tip_background3"];
+        self.backgroundImageView.image = [UIImage imageNamed:@"tip_background6"];
     }
 }
 
@@ -117,6 +119,27 @@
 {
     self.tipAmount = (self.billAmount * self.tipPercent) / self.splitCount;
     self.tipLabel.text = [NSString stringWithFormat:@"$%.2f",self.tipAmount];
+
+    if (self.tipAmount != 0)
+    {
+        float total = (self.tipAmount * self.splitCount) + self.billAmount;
+        self.totalLabel.text = [NSString stringWithFormat:@"Total: $%.2f",total];
+        [self animateTotal];
+    }
+    else
+    {
+        self.totalLabel.text = [NSString stringWithFormat:@""];
+        [self animateTotal];
+    }
+}
+
+-(void)animateTotal
+{
+    CATransition *animation = [CATransition animation];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.type = kCATransitionFade;
+    animation.duration = 0.5;
+    [self.totalLabel.layer addAnimation:animation forKey:@"kCATransitionFade"];
 }
 
 #pragma mark - Actions

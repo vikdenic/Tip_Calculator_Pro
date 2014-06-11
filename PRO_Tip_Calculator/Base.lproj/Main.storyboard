@@ -16,16 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tip_background2" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-Ge-WCP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tip_background5" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-Ge-WCP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.87058830261230469" green="0.87058830261230469" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-PF-WnD">
-                                <rect key="frame" x="70" y="211" width="181" height="57"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-PF-WnD">
+                                <rect key="frame" x="68" y="192" width="191" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84978464693168931" green="0.8450372466695012" blue="0.85453204719387754" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.44313728809356689" green="0.44313728809356689" blue="0.44313728809356689" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.52827563191331561" green="0.62028303695915588" blue="0.66438137755102034" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.95294123888015747" green="0.95294123888015747" blue="0.95294123888015747" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -43,7 +44,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICV-s9-TID">
                                 <rect key="frame" x="14" y="68" width="293" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="0.95294123890000004" green="0.95294123890000004" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -133,6 +134,13 @@
                                     <action selector="onTwentyFivePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="T25-W4-En8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total: $56.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFI-dT-6eO">
+                                <rect key="frame" x="20" y="258" width="287" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.95294123890000004" green="0.95294123890000004" blue="0.95294123890000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -145,6 +153,7 @@
                         <outlet property="splitLabel" destination="a3a-bJ-eJd" id="TZf-US-XfM"/>
                         <outlet property="tenImageView" destination="3Cp-YN-VeF" id="KQQ-4y-x9K"/>
                         <outlet property="tipLabel" destination="ICV-s9-TID" id="s60-vN-unF"/>
+                        <outlet property="totalLabel" destination="PFI-dT-6eO" id="kC1-rv-DRL"/>
                         <outlet property="twentyFiveImageView" destination="Pem-Xu-0ub" id="BUn-ca-yM3"/>
                         <outlet property="twentyImageView" destination="Owv-bk-hWx" id="FOa-IV-gaZ"/>
                         <outlet property="upArrowSelectedImage" destination="hZ4-2n-H5O" id="nE2-to-4wm"/>
@@ -159,7 +168,7 @@
         <image name="down_arrow_selected" width="40" height="36"/>
         <image name="fifteen" width="67" height="67"/>
         <image name="ten" width="67" height="67"/>
-        <image name="tip_background2" width="320" height="568"/>
+        <image name="tip_background5" width="320" height="568"/>
         <image name="twenty" width="67" height="67"/>
         <image name="twentyfive" width="67" height="67"/>
         <image name="up_arrow_selected" width="40" height="36"/>

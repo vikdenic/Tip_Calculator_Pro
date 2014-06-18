@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9300929C1946A11500D24B05 /* Raleway-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9300929B1946A11500D24B05 /* Raleway-ExtraLight.otf */; };
 		935578DA194EC44200F5DF30 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935578D9194EC44200F5DF30 /* QuartzCore.framework */; };
-		93D79B1E1952453B001FE4A0 /* Raleway-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93D79B1D19524410001FE4A0 /* Raleway-Regular.otf */; };
 		93E9E4521940035A006047F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E9E4511940035A006047F8 /* Foundation.framework */; };
 		93E9E4541940035A006047F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E9E4531940035A006047F8 /* CoreGraphics.framework */; };
 		93E9E4561940035A006047F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E9E4551940035A006047F8 /* UIKit.framework */; };
@@ -37,9 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9300929B1946A11500D24B05 /* Raleway-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-ExtraLight.otf"; path = "../Raleway-ExtraLight.otf"; sourceTree = "<group>"; };
 		935578D9194EC44200F5DF30 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		93D79B1D19524410001FE4A0 /* Raleway-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.otf"; sourceTree = "<group>"; };
 		93E9E44E1940035A006047F8 /* PRO_Tip_Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PRO_Tip_Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E9E4511940035A006047F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93E9E4531940035A006047F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,8 +130,6 @@
 		93E9E4581940035A006047F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				93D79B1D19524410001FE4A0 /* Raleway-Regular.otf */,
-				9300929B1946A11500D24B05 /* Raleway-ExtraLight.otf */,
 				93E9E4591940035A006047F8 /* PRO_Tip_Calculator-Info.plist */,
 				93E9E45A1940035A006047F8 /* InfoPlist.strings */,
 				93E9E45D1940035A006047F8 /* main.m */,
@@ -238,11 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D79B1E1952453B001FE4A0 /* Raleway-Regular.otf in Resources */,
 				93E9E46A1940035A006047F8 /* Images.xcassets in Resources */,
 				93E9E45C1940035A006047F8 /* InfoPlist.strings in Resources */,
 				93E9E4651940035A006047F8 /* Main.storyboard in Resources */,
-				9300929C1946A11500D24B05 /* Raleway-ExtraLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

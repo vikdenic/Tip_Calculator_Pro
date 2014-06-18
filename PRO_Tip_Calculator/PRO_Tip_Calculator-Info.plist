@@ -27,6 +27,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway-ExtraLight.otf</string>
+		<string>Raleway-Regular.otf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>

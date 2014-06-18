@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController () <UITextFieldDelegate>
 
@@ -34,6 +35,8 @@
 @property float tipAmount;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *tapHereLabel;
+
 @end
 
 @implementation ViewController
@@ -46,14 +49,8 @@
 
     self.billTextField.delegate = self;
     self.billTextField.borderStyle = UITextBorderStyleRoundedRect;
-//    self.billTextField.font = [UIFont fontWithName:@"Raleway-ExtraLight" size:50];
-//    self.splitLabel.font = [UIFont fontWithName:@"Raleway-ExtraLight" size:45];
-//    self.tipLabel.font = [UIFont fontWithName:@"Raleway-ExtraLight" size:50];
-    [self onTwentyPressed:self];
 
-    //Raleway-ExtraLight
-    //tiplabel splitlabel billtextfield
-    NSLog(@"%f", self.tipAmount);
+    [self onTwentyPressed:self];
 }
 
 // Dismisses billTextField's keyboard upon tap-away
@@ -62,8 +59,9 @@
     [self.view endEditing:YES];
 }
 
-// Splitting the bill
+#pragma mark - Helpers
 
+// Splitting the bill
 - (IBAction)onUpButtonReleased:(id)sender {
     self.splitCount += 1;
     self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
@@ -75,7 +73,8 @@
 
 }
 
-- (IBAction)onDownButtonReleased:(id)sender {
+- (IBAction)onDownButtonReleased:(id)sender
+{
     self.splitCount -= 1;
     self.splitLabel.text = [NSString stringWithFormat:@"%d",self.splitCount];
     self.downArrowSelectedImage.alpha = 0;
@@ -190,8 +189,6 @@
 
 #pragma mark - Delegates
 
-//UITextField Formatting
-
 //Locks in a dollar sign at all times
 - (IBAction)onBillTextFieldEdited:(id)sender {
 
@@ -204,7 +201,7 @@
         self.billTextField.text = [NSString stringWithFormat:@"$%@",enteredText];
     }
     self.billAmount = [[self.billTextField.text substringFromIndex:1] floatValue];
-//    self.billAmount = [enteredText floatValue];
+
     [self calculateTip];
 }
 
@@ -219,8 +216,11 @@
         NSString *sepStr=[NSString stringWithFormat:@"%@",[sep objectAtIndex:1]];
         return !([sepStr length]>2);
     }
-
     return YES;
+}
+
+- (IBAction)textFieldDidBeginEditing:(id)sender {
+    self.tapHereLabel.alpha = 0;
 }
 
 @end
